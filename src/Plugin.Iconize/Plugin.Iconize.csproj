@@ -1,35 +1,21 @@
-﻿<Project Sdk="MSBuild.Sdk.Extras">
-
-  <PropertyGroup><!-- VS4Mac workaround -->
+﻿<Project Sdk="Microsoft.NET.Sdk">
+    <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
   </PropertyGroup>
 
   <ItemGroup>
-    <Compile Remove="**/Platform/**/*.cs" />
-    <None Include="**/Platform/**/*.cs" />
+    <Compile Remove="Platform\UWP\PlatformExtensions.cs" />
+    <Compile Remove="Platform\UWP\Renderers\IconButtonRenderer.cs" />
+    <Compile Remove="Platform\UWP\Renderers\IconImageRenderer.cs" />
+    <Compile Remove="Platform\UWP\Renderers\IconLabelRenderer.cs" />
+    <Compile Remove="Platform\UWP\Renderers\IconNavigationPageRenderer.cs" />
+    <Compile Remove="Platform\UWP\Renderers\IconTabbedPageRenderer.cs" />
+    <Compile Remove="Platform\WPF\PlatformExtensions.cs" />
+    <Compile Remove="Platform\WPF\Renderers\IconButtonRenderer.cs" />
+    <Compile Remove="Platform\WPF\Renderers\IconImageRenderer.cs" />
+    <Compile Remove="Platform\WPF\Renderers\IconLabelRenderer.cs" />
   </ItemGroup>
-
-  <ItemGroup Condition=" $(TargetFramework.StartsWith('MonoAndroid')) ">
-    <None Remove="**/Platform/Android/**/*.cs" />
-    <Compile Include="**/Platform/Android/**/*.cs" />
-  </ItemGroup>
-
-  <ItemGroup Condition=" $(TargetFramework.StartsWith('Xamarin.iOS')) ">
-    <None Remove="**/Platform/iOS/**/*.cs" />
-    <Compile Include="**/Platform/iOS/**/*.cs" />
-  </ItemGroup>
-
-  <ItemGroup Condition=" $(TargetFramework.StartsWith('Xamarin.Mac')) ">
-    <None Remove="**/Platform/macOS/**/*.cs" />
-    <Compile Include="**/Platform/macOS/**/*.cs" />
-  </ItemGroup>
-
-  <ItemGroup Condition=" $(TargetFramework.StartsWith('uap10.0')) ">
-    <None Remove="**/Platform/UWP/**/*.cs" />
-    <Compile Include="**/Platform/UWP/**/*.cs" />
-  </ItemGroup>
-
-  <ItemGroup Condition=" $(TargetFramework.StartsWith('net4')) ">
-    <None Remove="**/Platform/WPF/**/*.cs" />
-    <Compile Include="**/Platform/WPF/**/*.cs" />
+  <ItemGroup>
+    <PackageReference Include="Xamarin.Forms" Version="4.2.0.709249" />
   </ItemGroup>
 </Project>

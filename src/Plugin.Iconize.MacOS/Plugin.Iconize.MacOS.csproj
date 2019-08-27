@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{BCA2D77B-D864-48C9-9F82-FEC1BD98CE57}</ProjectGuid>
+    <ProjectTypeGuids>{A3F8F2AB-B479-4A4A-A458-A89E7DC349F1};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <RootNamespace>Plugin.Iconize.MacOS</RootNamespace>
+    <AssemblyName>Plugin.Iconize.MacOS</AssemblyName>
+    <TargetFrameworkVersion>v2.0</TargetFrameworkVersion>
+    <TargetFrameworkIdentifier>Xamarin.Mac</TargetFrameworkIdentifier>
+    <MonoMacResourcePrefix>Resources</MonoMacResourcePrefix>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug</OutputPath>
+    <DefineConstants>DEBUG;</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <EnableCodeSigning>false</EnableCodeSigning>
+    <CreatePackage>false</CreatePackage>
+    <EnablePackageSigning>false</EnablePackageSigning>
+    <IncludeMonoRuntime>false</IncludeMonoRuntime>
+    <UseSGen>false</UseSGen>
+    <HttpClientHandler></HttpClientHandler>
+    <LinkMode></LinkMode>
+    <XamMacArch></XamMacArch>
+    <NoWarn></NoWarn>
+    <LangVersion>Default</LangVersion>
+    <AOTMode>None</AOTMode>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType></DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release</OutputPath>
+    <DefineConstants></DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <EnableCodeSigning>false</EnableCodeSigning>
+    <CreatePackage>false</CreatePackage>
+    <EnablePackageSigning>false</EnablePackageSigning>
+    <IncludeMonoRuntime>false</IncludeMonoRuntime>
+    <UseSGen>false</UseSGen>
+    <HttpClientHandler></HttpClientHandler>
+    <LinkMode></LinkMode>
+    <XamMacArch></XamMacArch>
+    <NoWarn></NoWarn>
+    <LangVersion>Default</LangVersion>
+    <AOTMode>None</AOTMode>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="Xamarin.Mac" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Renderers\IconButtonRenderer.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Renderers\IconImageRenderer.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Renderers\IconLabelRenderer.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Renderers\IconTabbedPageRenderer.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="PlatformExtensions.cs">
+      <SubType>Code</SubType>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Renderers\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Plugin.Iconize\Plugin.Iconize.csproj">
+      <Project>{51C3E293-12E9-47BA-BDB9-AE36FDB87C55}</Project>
+      <Name>Plugin.Iconize</Name>
+      <ReferenceSourceTarget>ProjectReference</ReferenceSourceTarget>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="Xamarin.Forms">
+      <Version>4.2.0.709249</Version>
+    </PackageReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildExtensionsPath)\Xamarin\Mac\Xamarin.Mac.CSharp.targets" />
+</Project>

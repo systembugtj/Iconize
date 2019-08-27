@@ -16,8 +16,7 @@
     <AndroidResgenFile>Resources\Resource.Designer.cs</AndroidResgenFile>
     <GenerateSerializationAssemblies>Off</GenerateSerializationAssemblies>
     <AndroidManifest>Properties\AndroidManifest.xml</AndroidManifest>
-    <AndroidUseLatestPlatformSdk>false</AndroidUseLatestPlatformSdk>
-    <TargetFrameworkVersion>v8.1</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v9.0</TargetFrameworkVersion>
     <AndroidSupportedAbis>armeabi,armeabi-v7a,x86</AndroidSupportedAbis>
     <AndroidStoreUncompressedFileExtensions />
     <MandroidI18n />
@@ -37,10 +36,6 @@
     <WarningLevel>4</WarningLevel>
     <AndroidUseSharedRuntime>True</AndroidUseSharedRuntime>
     <AndroidLinkMode>None</AndroidLinkMode>
-    <EnableProguard>false</EnableProguard>
-    <AotAssemblies>false</AotAssemblies>
-    <EnableLLVM>false</EnableLLVM>
-    <BundleAssemblies>false</BundleAssemblies>
     <JavaMaximumHeapSize>1G</JavaMaximumHeapSize>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
@@ -104,6 +99,19 @@
     <ProjectReference Include="..\Iconize.Sample\Iconize.Sample.csproj">
       <Project>{37b28d65-4d60-4aa7-abf3-6b644c6fad0e}</Project>
       <Name>Iconize.Sample</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\src\Plugin.Iconize\Plugin.Iconize.csproj">
+      <Project>{51C3E293-12E9-47BA-BDB9-AE36FDB87C55}</Project>
+      <Name>Plugin.Iconize</Name>
+      <ReferenceSourceTarget>ProjectReference</ReferenceSourceTarget>
+    </ProjectReference>
+    <ProjectReference Include="..\..\src\Plugin.Iconize.Android\Plugin.Iconize.Android.csproj">
+      <Project>{06344550-D907-44D7-B586-4A0BFD968E07}</Project>
+      <Name>Plugin.Iconize.Android</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\src\Fonts\Plugin.Iconize.SimpleLineIcons.Android\Plugin.Iconize.SimpleLineIcons.Android.csproj">
+      <Project>{A16DDD3A-ABAC-4C4B-9EE0-B63259AAF090}</Project>
+      <Name>Plugin.Iconize.SimpleLineIcons.Android</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />

@@ -1,54 +1,69 @@
 using System;
 using System.ComponentModel;
 using Android.Content;
+using Android.OS;
+using Android.Text;
 using Plugin.Iconize;
-using Xamarin.Forms;
+
 using Xamarin.Forms.Platform.Android;
+
 #if USE_FASTRENDERERS
-using LabelRenderer = Xamarin.Forms.Platform.Android.FastRenderers.LabelRenderer;
+using ButtonRenderer = Xamarin.Forms.Platform.Android.FastRenderers.ButtonRenderer;
 #else
-using LabelRenderer = Xamarin.Forms.Platform.Android.LabelRenderer;
+using ButtonRenderer = Xamarin.Forms.Platform.Android.AppCompat.ButtonRenderer;
 #endif
 
-[assembly: ExportRenderer(typeof(IconLabel), typeof(IconLabelRenderer))]
+[assembly: Xamarin.Forms.ExportRenderer(typeof(IconButton), typeof(IconButtonRenderer))]
 
 namespace Plugin.Iconize
 {
     /// <summary>
-    /// Defines the <see cref="IconLabel" /> renderer.
+    /// Defines the <see cref="IconButton" /> renderer.
     /// </summary>
 #if USE_FASTRENDERERS
-    /// <seealso cref="Xamarin.Forms.Platform.Android.FastRenderers.LabelRenderer" />
+    /// <seealso cref="Xamarin.Forms.Platform.Android.FastRenderers.ButtonRenderer" />
 #else
-    /// <seealso cref="Xamarin.Forms.Platform.Android.LabelRenderer" />
+    /// <seealso cref="Xamarin.Forms.Platform.Android.AppCompat.ButtonRenderer" />
 #endif
-    public class IconLabelRenderer : LabelRenderer
+    public class IconButtonRenderer : ButtonRenderer
     {
         /// <summary>
-        /// Gets the label.
+        /// Gets the button.
         /// </summary>
         /// <value>
-        /// The label.
+        /// The button.
         /// </value>
-        private IconLabel Label => Element as IconLabel;
+        private IconButton Button => Element as IconButton;
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="IconLabelRenderer"/> class.
+        /// Initializes a new instance of the <see cref="IconButtonRenderer"/> class.
         /// </summary>
         /// <param name="context">The context.</param>
-        public IconLabelRenderer(Context context)
+        public IconButtonRenderer(Context context)
             : base(context)
         {
             // Intentionally left blank
         }
 
         /// <inheritdoc />
-        protected override void OnElementChanged(ElementChangedEventArgs<Label> e)
-        {
+        protected override void OnElementChanged(ElementChangedEventArgs<Xamarin.Forms.Button> e)
+        { 
             base.OnElementChanged(e);
 
-            if (Label is null)
+            if (Button is null)
                 return;
+
+#if USE_FASTRENDERERS
+            SetAllCaps(false);
+#else
+            Control.SetAllCaps(false);
+#endif
+
+            if (Build.VERSION.SdkInt >= BuildVersionCodes.Lollipop)
+            {
+                this.SetBackground(null);
+                StateListAnimator = null;
+            }
 
             UpdateText();
         }
@@ -58,13 +73,14 @@ namespace Plugin.Iconize
         {
             base.OnElementPropertyChanged(sender, e);
 
-            if (Label is null)
+            if (Button is null)
                 return;
 
             switch (e.PropertyName)
             {
-                case nameof(IconLabel.FontSize):
-                case nameof(IconLabel.TextColor):
+                case nameof(IconButton.Text):
+                case nameof(IconButton.FontSize):
+                case nameof(IconButton.TextColor):
                     UpdateText();
                     break;
             }
@@ -100,7 +116,7 @@ namespace Plugin.Iconize
             base.OnDetachedFromWindow();
         }
 
-        private void OnTextChanged(Object sender, Android.Text.TextChangedEventArgs e)
+        private void OnTextChanged(Object sender, TextChangedEventArgs e)
         {
             UpdateText();
         }
@@ -110,7 +126,7 @@ namespace Plugin.Iconize
 #if USE_FASTRENDERERS
             TextChanged -= OnTextChanged;
 
-            var icon = Iconize.FindIconForKey(Label.Text);
+            var icon = Iconize.FindIconForKey(Button.Text);
             if (!(icon is null))
             {
                 Text = $"{icon.Character}";
@@ -123,7 +139,7 @@ namespace Plugin.Iconize
             {
                 Control.TextChanged -= OnTextChanged;
 
-                var icon = Iconize.FindIconForKey(Label.Text);
+                var icon = Iconize.FindIconForKey(Button.Text);
                 if (!(icon is null))
                 {
                     Control.Text = $"{icon.Character}";
