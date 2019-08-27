@@ -13,6 +13,10 @@ namespace Plugin.Iconize
     /// </summary>
     public static class PlatformExtensions
     {
+        public static void Init()
+        {
+
+        }
         private static readonly Dictionary<Type, Typeface> _fontCache = new Dictionary<Type, Typeface>();
 
         /// <summary>

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
+    <metadata>
+        <id>Plugin.Iconize.SimpleLineIcons</id>
+        <version>3.6</version>
+        <title>Iconize Plugin SimpleLineIcons</title>
+        <authors>Albert Li</authors>
+        <owners>Albert Li</owners>
+        <licenseUrl>http://opensource.org/licenses/ms-pl.html</licenseUrl>
+        <projectUrl>https://github.com/systembugtj/Plugin.Iconize</projectUrl>
+        <requireLicenseAcceptance>false</requireLicenseAcceptance>
+        <description>Use simplelineicons in your Xamarin.Forms application!</description>
+        <tags>iconize plugin simplelineicons</tags>
+        <dependencies>
+            <dependency id="Plugin.Iconize" version="3.6" />       
+        </dependencies>
+    </metadata>
+    <files>
+		<!--netstandard2.0 -->
+        <file src="..\src\Plugin.Iconize.SimpleLineIcons\bin\Release\netstandard2.0\Plugin.Iconize.SimpleLineIcons.dll" target="lib\netstandard2.0" />
+        <file src="..\src\Plugin.Iconize.SimpleLineIcons\bin\Release\netstandard2.0\Plugin.Iconize.SimpleLineIcons.pdb" target="lib\netstandard2.0" />		
+    </files>
+</package>
