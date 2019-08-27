@@ -82,7 +82,7 @@ namespace Plugin.Iconize
 #if USE_FASTRENDERERS
                 SetImageResource(Android.Resource.Color.Transparent);
 #else
-                Control.SetImageResource(Android.Resource.Color.Transparent);
+                Control.SetImageResource(Android.Resource.Color.background_material_light);
 #endif
                 return;
             }

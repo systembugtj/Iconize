@@ -14,5 +14,6 @@
   <ItemGroup>
     <ProjectReference Include="..\..\src\Plugin.Iconize\Plugin.Iconize.csproj" />
     <ProjectReference Include="..\..\src\Fonts\Plugin.Iconize.SimpleLineIcons\Plugin.Iconize.SimpleLineIcons.csproj" />
+    <ProjectReference Include="..\..\src\Fonts\Plugin.Iconize.WeatherIcons\Plugin.Iconize.WeatherIcons.csproj" />
   </ItemGroup>
 </Project>

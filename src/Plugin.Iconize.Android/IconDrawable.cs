@@ -9,6 +9,7 @@ using Android.Text;
 using Android.Util;
 using R = Android.Resource;
 
+
 namespace Plugin.Iconize
 {
     /// <summary>
@@ -27,7 +28,7 @@ namespace Plugin.Iconize
         private readonly TextPaint _paint;
 
         private Int32 _alpha = 255;
-        private Color _color = Android.Graphics.Color.Black;
+        private Color _color = new Color(0);
         private Int32 _size = -1;
         private ColorStateList _tintList;
 

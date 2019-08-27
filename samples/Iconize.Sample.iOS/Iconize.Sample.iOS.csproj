@@ -119,14 +119,8 @@
     <BundleResource Include="..\..\src\Fonts\Plugin.Iconize.Typicons\iconize-typicons.ttf">
       <Link>Resources\iconize-typicons.ttf</Link>
     </BundleResource>
-    <BundleResource Include="..\..\src\Fonts\Plugin.Iconize.WeatherIcons\iconize-weathericons.ttf">
-      <Link>Resources\iconize-weathericons.ttf</Link>
-    </BundleResource>
     <BundleResource Include="..\..\src\Fonts\Plugin.Iconize.JamIcons\iconize-jam-icons.ttf">
       <Link>Resources\iconize-jam-icons.ttf</Link>
-    </BundleResource>
-        <BundleResource Include="..\..\src\Fonts\Plugin.Iconize.SimpleLineIcons.iOS\iconize-simplelineicons.ttf">
-      <Link>Resources\iconize-simplelineicons.ttf</Link>
     </BundleResource>
     <None Include="Entitlements.plist" />
     <None Include="Info.plist">
@@ -135,6 +129,8 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <ITunesArtwork Include="iTunesArtwork" />
     <ITunesArtwork Include="iTunesArtwork@2x" />
+    <BundleResource Include="Resources\iconize-simplelineicons.ttf" />
+    <BundleResource Include="Resources\iconize-weathericons.ttf" />
   </ItemGroup>
   <ItemGroup>
     <BundleResource Include="Resources\Default-568h%402x.png" />
@@ -168,10 +164,6 @@
     <ProjectReference Include="..\..\src\Plugin.Iconize.iOS\Plugin.Iconize.iOS.csproj">
       <Project>{2B623714-1DA9-4198-9802-2B0474406C61}</Project>
       <Name>Plugin.Iconize.iOS</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\..\src\Fonts\Plugin.Iconize.SimpleLineIcons.iOS\Plugin.Iconize.SimpleLineIcons.iOS.csproj">
-      <Project>{8245662F-6988-42E2-AA57-3211824AA53A}</Project>
-      <Name>Plugin.Iconize.SimpleLineIcons.iOS</Name>
     </ProjectReference>
     <ProjectReference Include="..\..\src\Plugin.Iconize\Plugin.Iconize.csproj">
       <Project>{51C3E293-12E9-47BA-BDB9-AE36FDB87C55}</Project>

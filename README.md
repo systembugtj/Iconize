@@ -2,6 +2,24 @@
 
 Use icon fonts in your Xamarin.Forms application!
 
+## Refactor to regular project structure.
+
+With latest android update, the old approach for fectching font isn't worked any more.
+
+### Reference
+
+Form Core project should refer to Iconize and related font module
+
+Device specific project only need to refer the Iconize.[Device].
+
+### Android
+
+Add *.ttf under Assets.
+
+### iOS and Mac
+
+No change.
+
 **NuGet**
 
 * Available on NuGet: [![NuGet](https://img.shields.io/nuget/v/Xam.Plugin.Iconize.svg?label=NuGet)](https://www.nuget.org/packages/Xam.Plugin.Iconize/)
@@ -132,7 +150,18 @@ Add the UIAppFonts key to Info.plist with the specific fonts you have chosen.
     <string>iconize-weathericons.ttf</string>
 </array>
 ```
+Initialize the IconControls.
 
+```csharp
+public override bool FinishedLaunching(UIApplication uiApplication, NSDictionary launchOptions)
+{
+    global::Xamarin.Forms.Forms.Init();
+
+    ...
+    Plugin.Iconize.PlatformExtensions.Init();
+    ...
+}
+```
 **Xamarin.Forms with Caliburn Micro**  
 Add the following to App.cs
 

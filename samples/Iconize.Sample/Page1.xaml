@@ -6,18 +6,18 @@
     xmlns:iconize="clr-namespace:Plugin.Iconize;assembly=Plugin.Iconize"
     Title="{Binding FontFamily}">
     <ContentPage.ToolbarItems>
-        <iconize:IconToolbarItem Command="{Binding ModalTestCommand}" Icon="fas-address-book" />
+        <iconize:IconToolbarItem Command="{Binding ModalTestCommand}" Icon="icon-list" />
         <iconize:IconToolbarItem
             Command="{Binding VisibleTestCommand}"
-            Icon="fas-address-book"
+            Icon="icon-list"
             IconColor="Red" />
         <iconize:IconToolbarItem
             Command="{Binding VisibleTestCommand}"
-            Icon="fas-address-book"
+            Icon="icon-list"
             IsVisible="{Binding VisibleTest}" />
         <iconize:IconToolbarItem
             Clicked="ClickTest"
-            Icon="fas-address-book"
+            Icon="icon-list"
             IconColor="Green"
             IsVisible="{Binding VisibleTest}" />
     </ContentPage.ToolbarItems>

@@ -16,6 +16,8 @@ namespace Plugin.Iconize
     {
         public static void Init()
         {
+            // Somehow iOS build could remove unused class, cause render didn't be called.
+            // Do this simply to make sure this can be linked.
             var d = new IconImageRenderer();
         }
         /// <summary>

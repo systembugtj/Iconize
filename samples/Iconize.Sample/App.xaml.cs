@@ -30,13 +30,14 @@ namespace Iconize.Sample
                 //.With(new Plugin.Iconize.Fonts.MaterialModule())
                 //.With(new Plugin.Iconize.Fonts.MeteoconsModule())
                 //.With(new Plugin.Iconize.Fonts.TypiconsModule())
-                //.With(new Plugin.Iconize.Fonts.WeatherIconsModule()).
+                .With(new Plugin.Iconize.Fonts.WeatherIconsModule())
                 .With(new Plugin.Iconize.Fonts.SimpleLineIconsModule());
 
             // The root page of your application
             var tabbedPage = new IconTabbedPage { Title = "Iconize" };
-            tabbedPage.On<Xamarin.Forms.PlatformConfiguration.Android>().SetBarItemColor(Xamarin.Forms.Color.Yellow);
-            tabbedPage.On<Xamarin.Forms.PlatformConfiguration.Android>().SetBarSelectedItemColor(Xamarin.Forms.Color.Black);
+            tabbedPage.UnselectedTabColor = Xamarin.Forms.Color.Yellow;
+            tabbedPage.SelectedTabColor = Xamarin.Forms.Color.Black;
+
             tabbedPage.On<Xamarin.Forms.PlatformConfiguration.Android>().SetToolbarPlacement(ToolbarPlacement.Bottom);
 
             for (int i = 0; i < Math.Min(Plugin.Iconize.Iconize.Modules.Count, 5); i++)
