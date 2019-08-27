@@ -22,6 +22,8 @@ namespace Iconize.Sample.iOS
         {
             global::Xamarin.Forms.Forms.Init();
 
+            Plugin.Iconize.PlatformExtensions.Init();
+
             foreach (var familyName in UIFont.FamilyNames.OrderBy(x => x))
             {
                 System.Console.WriteLine($"Family: {familyName}");

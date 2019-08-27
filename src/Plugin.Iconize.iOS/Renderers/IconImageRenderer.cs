@@ -1,5 +1,6 @@
 ﻿using System;
 using System.ComponentModel;
+using Foundation;
 using Plugin.Iconize;
 using UIKit;
 using Xamarin.Forms;

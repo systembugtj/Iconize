@@ -68,7 +68,7 @@ namespace Plugin.Iconize
         /// <returns></returns>
         internal static Drawable GetToolbarItemDrawable(this ToolbarItem toolbarItem, Context context)
         {
-            if (String.IsNullOrWhiteSpace(toolbarItem.Icon))
+            if (toolbarItem.IconImageSource.IsEmpty)
                 return null;
 
             if (!(toolbarItem is IconToolbarItem iconItem))

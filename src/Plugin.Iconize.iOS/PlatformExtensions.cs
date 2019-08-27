@@ -14,6 +14,10 @@ namespace Plugin.Iconize
     /// </summary>
     public static class PlatformExtensions
     {
+        public static void Init()
+        {
+            var d = new IconImageRenderer();
+        }
         /// <summary>
         /// To the UI font.
         /// </summary>

@@ -4,6 +4,7 @@
     <TargetFramework>netstandard2.0</TargetFramework>
     <LangVersion>latest</LangVersion>
     <RestoreAdditionalProjectSources>https://ci.appveyor.com/nuget/iconize;</RestoreAdditionalProjectSources>
+    <ReleaseVersion>3.6</ReleaseVersion>
   </PropertyGroup>
 
   <ItemGroup>

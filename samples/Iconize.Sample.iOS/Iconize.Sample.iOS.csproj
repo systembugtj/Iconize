@@ -13,6 +13,7 @@
     <AssemblyName>Iconize.Sample.iOS</AssemblyName>
     <RestoreProjectStyle>PackageReference</RestoreProjectStyle>
     <SkipContentFileWrite>false</SkipContentFileWrite>
+    <ReleaseVersion>3.6</ReleaseVersion>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|iPhoneSimulator' ">
     <DebugSymbols>true</DebugSymbols>
@@ -124,8 +125,8 @@
     <BundleResource Include="..\..\src\Fonts\Plugin.Iconize.JamIcons\iconize-jam-icons.ttf">
       <Link>Resources\iconize-jam-icons.ttf</Link>
     </BundleResource>
-    <BundleResource Include="..\..\src\Fonts\Plugin.Iconize.SimpleLineIcons.iOS\iconize-simplelineicons.ttf">
-      <Link>Resources\iconize-simplelineicons.ttf</Link> 
+        <BundleResource Include="..\..\src\Fonts\Plugin.Iconize.SimpleLineIcons.iOS\iconize-simplelineicons.ttf">
+      <Link>Resources\iconize-simplelineicons.ttf</Link>
     </BundleResource>
     <None Include="Entitlements.plist" />
     <None Include="Info.plist">
@@ -164,11 +165,6 @@
       <Project>{37b28d65-4d60-4aa7-abf3-6b644c6fad0e}</Project>
       <Name>Iconize.Sample</Name>
     </ProjectReference>
-    <ProjectReference Include="..\..\src\Plugin.Iconize\Plugin.Iconize.csproj">
-      <Project>{51C3E293-12E9-47BA-BDB9-AE36FDB87C55}</Project>
-      <Name>Plugin.Iconize</Name>
-      <ReferenceSourceTarget>ProjectReference</ReferenceSourceTarget>
-    </ProjectReference>
     <ProjectReference Include="..\..\src\Plugin.Iconize.iOS\Plugin.Iconize.iOS.csproj">
       <Project>{2B623714-1DA9-4198-9802-2B0474406C61}</Project>
       <Name>Plugin.Iconize.iOS</Name>
@@ -176,6 +172,10 @@
     <ProjectReference Include="..\..\src\Fonts\Plugin.Iconize.SimpleLineIcons.iOS\Plugin.Iconize.SimpleLineIcons.iOS.csproj">
       <Project>{8245662F-6988-42E2-AA57-3211824AA53A}</Project>
       <Name>Plugin.Iconize.SimpleLineIcons.iOS</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\src\Plugin.Iconize\Plugin.Iconize.csproj">
+      <Project>{51C3E293-12E9-47BA-BDB9-AE36FDB87C55}</Project>
+      <Name>Plugin.Iconize</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
