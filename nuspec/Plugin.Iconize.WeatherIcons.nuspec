@@ -2,16 +2,16 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
     <metadata>
         <id>Plugin.Iconize.WeatherIcons</id>
-        <version>3.6</version>
+        <version>3.6.0</version>
         <title>Iconize Plugin WeatherIcons</title>
         <authors>Albert Li</authors>
         <owners>Albert Li</owners>
         <licenseUrl>http://opensource.org/licenses/ms-pl.html</licenseUrl>
-        <projectUrl>https://github.com/systembugtj/Plugin.Iconize</projectUrl>
+        <projectUrl>https://github.com/systembugtj/Iconize</projectUrl>
         <requireLicenseAcceptance>false</requireLicenseAcceptance>
         <description>Use WeatherIcons in your Xamarin.Forms application!</description>
         <tags>iconize plugin WeatherIcons</tags>
-         <dependencies>
+        <dependencies>
             <dependency id="Plugin.Iconize" version="3.6" />       
         </dependencies>
     </metadata>

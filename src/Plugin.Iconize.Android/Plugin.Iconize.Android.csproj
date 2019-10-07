@@ -84,7 +84,7 @@
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Plugin.Iconize\Plugin.Iconize.csproj">
-      <Project>{51C3E293-12E9-47BA-BDB9-AE36FDB87C55}</Project>
+      <Project>{B0387056-24F4-4421-8B49-B78A2CEDC19E}</Project>
       <Name>Plugin.Iconize</Name>
     </ProjectReference>
   </ItemGroup>
